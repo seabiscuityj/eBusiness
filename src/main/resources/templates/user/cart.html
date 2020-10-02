@@ -25,6 +25,12 @@
 			window.location.href = projectName + "/cart/clearCart";
 		}
 	}
+	function cartIsEmpty(){
+		alert("购物车已经为空，无法清空！");
+	}
+	function remindNoGoods(){
+		alert("购物车为空，无法结算。请先选购商品！");
+	}
 </script>
 </head>
 <body>
@@ -68,12 +74,14 @@
 						</tr>
 						<tr>
 							<td colspan="5">
-								<a href="javascript:clearCart()" >清空购物车</a>
+								<a th:if="${total} > 0" href="javascript:clearCart()" >清空购物车</a>
+								<a th:if="${total} == 0" href="javascript:cartIsEmpty()" >清空购物车</a>
 							</td>
 						</tr>
 						<tr>
 							<td colspan="5">
-								<a href="cart/selectCart?act=toCount" >去结算</a>
+								<a th:if="${total} > 0" href="cart/selectCart?act=toCount">去结算</a>
+								<a th:if="${total} == 0" href="javascript:remindNoGoods()">去结算</a>
 							</td>
 						</tr>
 					</tbody>

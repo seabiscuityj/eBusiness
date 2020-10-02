@@ -43,7 +43,7 @@
 						</tr>
 						<tr>
 							<td colspan="4">
-								<a th:href="'cart/submitOrder?amount=' + ${total}" >提交订单</a>
+								<a th:if="${total} > 0" th:href="'cart/submitOrder?amount=' + ${total}" >提交订单</a>
 							</td>
 						</tr>
 					</tbody>

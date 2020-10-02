@@ -60,7 +60,7 @@
 							</tr>
 							<tr th:each="u:${allUsers}">
 								<td th:text="${u.id}"></td>
-								<td th:text="${u.bemail}"></td>
+								<td th:text="${u.email}"></td>
 								<td>
 									<a th:href="'javascript:deleteUsers('+ ${u.id} +')'" >删除</a>
 								</td>

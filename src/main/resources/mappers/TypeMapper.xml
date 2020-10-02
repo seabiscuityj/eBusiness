@@ -10,6 +10,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectAllTypeByPage"  resultType="GoodsType">
 		select * from goodstype  limit #{startIndex}, #{perPageSize} 
 	</select>
+	<select id="selectTypeByName" resultType="integer">
+		select count(*) from goodstype where typename = #{goodsTypeName}
+	</select>
 	<!-- 删除类型 -->
 	<delete id="deleteType" parameterType="integer">
 		delete from goodstype where id=#{id}

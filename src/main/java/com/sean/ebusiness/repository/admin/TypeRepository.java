@@ -12,6 +12,7 @@ import com.sean.ebusiness.entity.GoodsType;
 public interface TypeRepository {
 	int selectAll();
 	List<GoodsType> selectAllTypeByPage(@Param("startIndex") int startIndex, @Param("perPageSize") int perPageSize);
+	int selectTypeByName(String goodsTypeName);
 	int deleteType(int id);
 	List<Goods> selectGoods(int goodstype_id);
 	int addType(GoodsType goodsType);

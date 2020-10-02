@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.sean.ebusiness.entity.GoodsType;
 import com.sean.ebusiness.service.admin.TypeService;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 @RequestMapping("/type")
 public class TypeController extends AdminBaseController{
@@ -18,6 +20,10 @@ public class TypeController extends AdminBaseController{
 	@RequestMapping("/selectAllTypeByPage")
 	public String selectAllTypeByPage(Model model, int currentPage) {
 		return typeService.selectAllTypeByPage(model, currentPage);
+	}
+	@RequestMapping("/selectTypeByName")
+	public int selectTypeByName(String goodsTypeName) {
+		return typeService.selectTypeByName(goodsTypeName);
 	}
 	@RequestMapping("/deleteType")
 	@ResponseBody//返回字符串数据而不是视图
@@ -29,7 +35,7 @@ public class TypeController extends AdminBaseController{
 		return "admin/addType";
 	}
 	@RequestMapping("/addType")
-	public String addType(@ModelAttribute("goodsType") GoodsType goodsType) {
-		return typeService.addType(goodsType);
+	public String addType(@ModelAttribute("goodsType") GoodsType goodsType, Model model) {
+		return typeService.addType(goodsType, model);
 	}
 }

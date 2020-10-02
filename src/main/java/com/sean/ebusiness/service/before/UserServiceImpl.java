@@ -13,11 +13,11 @@ public class UserServiceImpl implements UserService {
 	@Autowired 
 	private UserRepository userRepository;
 	@Override
-	public String isUse(Customer Customer) {
-		if(userRepository.isUse(Customer).size() > 0) {
-			return "no";
+	public String isUsed(Customer Customer) {
+		if(userRepository.isUsed(Customer).size() > 0) {
+			return "yes";
 		}
-		return "ok";
+		return "no";
 	}
 	@Override
 	public String register(Customer Customer) {

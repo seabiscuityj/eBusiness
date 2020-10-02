@@ -9,11 +9,11 @@
 <script src="js/common.js"></script>
 <script type="text/javascript" th:inline="javascript">
 	function checkEmail(){
-		if(checkNull($("#bemail").val(), "请输入邮箱！")){
+		if(checkNull($("#email").val(), "请输入邮箱！")){
 			$.ajax(
 				{//提交检查用户名是否可用请求
 					//请求路径，要注意的是url和th:inline="javascript"
-					url : [[@{/user/isUse}]],
+					url : [[@{/user/isUsed}]],
 					//请求类型
 					type : "post",
 					contentType : "application/json",
@@ -23,7 +23,7 @@
 					}),
 					//成功响应的结果
 					success : function(obj){//obj响应数据
-						if(obj == "no"){
+						if(obj == "yes"){
 							$("#isExit").html("<font color=red size=5>×</font>");
 							alert("用户已存在，请修改！");
 						}else{

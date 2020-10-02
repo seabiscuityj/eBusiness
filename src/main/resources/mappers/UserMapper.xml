@@ -3,7 +3,7 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sean.ebusiness.repository.before.UserRepository">
-	<select id="isUse" parameterType="Customer" resultType="Customer">
+	<select id="isUsed" parameterType="Customer" resultType="Customer">
 		select * from customertable where email = #{email}
 	</select>
 	<insert id="register" parameterType="Customer">

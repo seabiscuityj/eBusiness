@@ -35,10 +35,10 @@ public class UserController {
 	    }
 		return userService.login(Customer, session, model);
 	}
-	@RequestMapping("/isUse")
+	@RequestMapping("/isUsed")
 	@ResponseBody
-	public String isUse(@RequestBody Customer Customer) {
-		return userService.isUse(Customer);
+	public String isUsed(@RequestBody Customer Customer) {
+		return userService.isUsed(Customer);
 	}
 	@RequestMapping("/register")
 	public String register(@ModelAttribute("Customer") @Validated Customer Customer,BindingResult rs) {

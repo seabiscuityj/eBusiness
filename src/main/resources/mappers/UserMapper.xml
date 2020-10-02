@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sean.ebusiness.repository.before.UserRepository">
+	<select id="isUse" parameterType="Customer" resultType="Customer">
+		select * from customertable where email = #{email}
+	</select>
+	<insert id="register" parameterType="Customer">
+		insert into customertable (id, email, pwd)  values(null, #{email}, #{pwd})
+	</insert>
+	<select id="login" parameterType="Customer" resultType="Customer">
+		select * from customertable where email = #{email} and pwd = #{pwd}
+	</select>
+</mapper>

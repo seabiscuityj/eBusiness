@@ -14,4 +14,5 @@ public interface GoodsService {
 	public String toAddGoods(Goods goods, Model model);
 	public String detail(Model model, Integer id, String act);
 	public String delete(Integer id);
+	public String searchGoodsByAdmin(Model model, String goodsNameKey);
 }

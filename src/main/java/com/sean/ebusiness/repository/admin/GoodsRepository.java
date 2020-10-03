@@ -21,4 +21,5 @@ public interface GoodsRepository {
 	List<Map<String, Object>> selectFocusGoods(Integer id);
 	List<Map<String, Object>> selectCartGoods(Integer id);
 	List<Map<String, Object>> selectOrderGoods(Integer id);
+	List<Goods> searchGoodsByAdmin(String goodsNameKey);
 }

@@ -41,4 +41,8 @@ public class GoodsController extends AdminBaseController{
 	public String delete(Integer id) {
 		return goodsService.delete(id);
 	}
+	@RequestMapping("searchGoodsByAdmin")
+	public String searchGoodsByAdmin(Model model, String goodsNameKey) {
+		return goodsService.searchGoodsByAdmin(model, goodsNameKey);
+	}
 }

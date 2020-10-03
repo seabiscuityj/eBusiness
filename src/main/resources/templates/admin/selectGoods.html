@@ -46,7 +46,7 @@
 	<br><br><br>
 	<div class="container">
 		<!-- 新增的查询商品的搜索框 -->
-		<form action="searchGoodsByAdmin" style="padding-right: 50px;">
+		<form action="goods/searchGoodsByAdmin" style="padding-right: 50px;">
 			<div style="padding-bottom: 15px">
 				<input type="text" style= "width:400px;float:left" class="form-control" name="goodsNameKey" placeholder="请输入要查询的商品名称" />
 				&nbsp;&nbsp;
@@ -66,8 +66,8 @@
 								<th style="text-align:center;">商品名称</th>
 								<th style="text-align:center;">商品类型</th>
 								<th style="text-align:center;">详情</th>
-								<th th:if="${act} == 'updateSelect'">操作</th>
-								<th th:if="${act} == 'deleteSelect'">操作</th>
+								<th style="text-align:center;" th:if="${act} == 'updateSelect'">操作</th>
+								<th style="text-align:center;" th:if="${act} == 'deleteSelect'">操作</th>
 							</tr>
 							<tr th:each="gds:${allGoods}">
 								<td th:text="${gds.id}"></td>

@@ -34,13 +34,19 @@ public class IndexServiceImpl implements IndexService {
 		return "user/goodsDetail";
 	}
 	@Override
-	public String search(Model model, String mykey) {
+	public String searchGoods(Model model, String mykey) {
 		//广告区商品
 		model.addAttribute("advertisementGoods", indexRepository.selectAdvertisementGoods());
 		//导航栏商品类型
 		model.addAttribute("goodsType", indexRepository.selectGoodsType());
 		//商品搜索
-		model.addAttribute("searchgoods", indexRepository.search(mykey));
+		model.addAttribute("searchgoods", indexRepository.searchGoods(mykey));
 		return "user/searchResult";
+	}
+
+	@Override
+	public String searchGoodsType(Model model, String goodsTypeKey) {
+
+		return null;
 	}
 }

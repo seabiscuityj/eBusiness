@@ -10,15 +10,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectUserByPage"  resultType="Customer">
 		select * from customertable limit #{startIndex}, #{perPageSize}
 	</select>
+	<!-- 在购物车表格中根据用户id查询购物车信息 -->
 	<select id="selectCartUser" resultType="map"  parameterType="int" >
 		select * from carttable where customer_id = #{id}
 	</select>
+	<!-- 在orderbasetable中根据用户id查询订单详情 -->
 	<select id="selectOrderUser" resultType="map"  parameterType="int">
 		select * from orderbasetable where customer_id = #{id}
 	</select>
+	<!-- 根据用户id删除某个用户 -->
 	<delete id="deleteUser" parameterType="int">
 		delete from customertable where id = #{id}
 	</delete>
+	<!-- 查询已有订单的数目 -->
 	<select id="selectAllOrder"  resultType="integer">
 		select count(*) from orderbasetable 
 	</select>

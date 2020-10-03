@@ -19,8 +19,12 @@ public class IndexController {
 	public String goodsDetail(Model model, Integer id) {
 		return indexService.goodsDetail(model, id);
 	}
-	@RequestMapping("/search")
-	public String search(Model model, String mykey) {
-		return indexService.search(model, mykey);
+	@RequestMapping("/searchGoods")
+	public String searchGoods(Model model, String mykey) {
+		return indexService.searchGoods(model, mykey);
+	}
+	@RequestMapping("/searchGoodsType")
+	public String searchGoodsType(Model model, String goodsTypeKey) {
+		return indexService.searchGoodsType(model, goodsTypeKey);
 	}
 }

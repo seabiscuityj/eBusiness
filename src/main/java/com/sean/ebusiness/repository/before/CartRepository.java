@@ -23,7 +23,7 @@ public interface CartRepository {
 	public int deleteAgoods(@Param("uid") Integer uid, @Param("gid") Integer gid);
 	public int clear(Integer uid);
 	public int addOrder(Order order);
-	public int addOrderDetail(@Param("ordersn") Integer ordersn, @Param("uid") Integer uid);
+	public int addOrderDetail(@Param("orderId") Integer orderId, @Param("uid") Integer uid);
 	public List<Map<String,Object>> selectGoodsShop(Integer uid);
 	public int updateStore(Map<String,Object> map);
 	public int pay(Integer ordersn);

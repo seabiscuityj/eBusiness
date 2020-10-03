@@ -14,5 +14,5 @@ public interface IndexRepository {
 	public List<Goods> selectRecommendGoods(Integer tid);
 	public List<Goods> selectLastedGoods(Integer tid);
 	public Goods selectAGoods(Integer id);
-	public List<Goods> search(String mykey);
+	public List<Goods> searchGoods(String mykey);
 }

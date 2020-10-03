@@ -91,7 +91,7 @@
 				<li><a th:href="@{/}">首页</a></li>
 				<li th:each="gty:${goodsType}"><a th:href="'?tid=' + ${gty.id}"><span th:text="${gty.typename}"></span></a></li>
 			</ul>
-			<form action="search" class="navbar-form navbar-right"
+			<form action="searchGoods" class="navbar-form navbar-right"
 				style="padding-right: 50px;">
 				<div class="form-group">
 					<input type="text" class="form-control" name="mykey" placeholder="请输入关键词" />

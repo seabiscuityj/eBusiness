@@ -56,8 +56,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		order by  gt.id desc limit 6 
 	</select>
 	<!-- 首页搜索 -->
-	<select id="search" resultType="Goods" parameterType="String">
+	<select id="searchGoods" resultType="Goods" parameterType="String">
 		select gt.*, gy.typename from GOODSTABLE gt,GOODSTYPE gy where gt.goodstype_id = gy.id 
 		and gt.gname like concat('%',#{mykey},'%')
+	</select>
+	<!-- 后台查询商品类别 -->
+	<select id="searchGoodsType" resultType="GoodsType" parameterType="String">
+		select * from GOODSTYPE gy where gy.typename like concat('%',#{goodsTypeKey},'%')
 	</select>
 </mapper>

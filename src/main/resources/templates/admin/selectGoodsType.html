@@ -46,7 +46,10 @@
 	<br><br><br>
 	<div class="container">
 		<!-- 新增的查询商品类型的搜索框 -->
-		<form action="searchGoodsType" style="padding-right: 50px;">
+		<!-- 千万注意！action不能写成/type/searchGoodsType。否则会提示404，因为那时的url变成localhost:8080/type/searchGoodsType?goodsTypeKey=?
+		 可能是因为加上/就变成绝对路径了。去掉第一个/，url就是localhost:8080/eBusiness/type/searchGoodsType?goodsTypeKey=?
+		 -->
+		<form action="type/searchGoodsType" style="padding-right: 50px;">
 			<div style="padding-bottom: 15px">
 				<input type="text" style= "width:400px;float:left" class="form-control" name="goodsTypeKey" placeholder="请输入要查询的商品类型名称" />
 				&nbsp;&nbsp;
@@ -62,9 +65,9 @@
 					<table class="table table-bordered table-hover">
 						<tbody class="text-center">
 							<tr>
-								<th>类型ID</th>
-								<th>类型名称</th>
-								<th>操作</th>
+								<th style="text-align:center;">类型ID</th>
+								<th style="text-align:center;">类型名称</th>
+								<th style="text-align:center;">操作</th>
 							</tr>
 							<tr th:each="gty:${allTypes}">
 								<td th:text="${gty.id}"></td>

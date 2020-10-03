@@ -38,4 +38,8 @@ public class TypeController extends AdminBaseController{
 	public String addType(@ModelAttribute("goodsType") GoodsType goodsType, Model model) {
 		return typeService.addType(goodsType, model);
 	}
+	@RequestMapping("/searchGoodsType")
+	public String searchGoodsType(Model model, String goodsTypeKey) {
+		return typeService.searchGoodsType(model, goodsTypeKey);
+	}
 }

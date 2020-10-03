@@ -63,4 +63,10 @@ public class TypeServiceImpl implements TypeService{
 		return "redirect:/type/selectAllTypeByPage?currentPage=1";
 	}
 
+	@Override
+	public String searchGoodsType(Model model, String goodsTypeKey) {
+		model.addAttribute("searchGoodsType", typeRepository.searchGoodsType(goodsTypeKey));
+		return "admin/searchGoodsTypeResult";
+	}
+
 }

@@ -45,6 +45,14 @@
 	<div th:include="admin/header"></div>
 	<br><br><br>
 	<div class="container">
+		<!-- 新增的查询商品的搜索框 -->
+		<form action="searchGoodsByAdmin" style="padding-right: 50px;">
+			<div style="padding-bottom: 15px">
+				<input type="text" style= "width:400px;float:left" class="form-control" name="goodsNameKey" placeholder="请输入要查询的商品名称" />
+				&nbsp;&nbsp;
+				<button type="submit" class="btn btn-default">搜索</button>
+			</div>
+		</form>
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h3 class="panel-title">商品列表</h3>
@@ -54,10 +62,10 @@
 					<table class="table table-bordered table-hover">
 						<tbody class="text-center">
 							<tr>
-								<th>商品ID</th>
-								<th>商品名称</th>
-								<th>商品类型</th>
-								<th>详情</th>
+								<th style="text-align:center;">商品ID</th>
+								<th style="text-align:center;">商品名称</th>
+								<th style="text-align:center;">商品类型</th>
+								<th style="text-align:center;">详情</th>
 								<th th:if="${act} == 'updateSelect'">操作</th>
 								<th th:if="${act} == 'deleteSelect'">操作</th>
 							</tr>

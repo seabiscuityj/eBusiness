@@ -40,13 +40,7 @@ public class IndexServiceImpl implements IndexService {
 		//导航栏商品类型
 		model.addAttribute("goodsType", indexRepository.selectGoodsType());
 		//商品搜索
-		model.addAttribute("searchgoods", indexRepository.searchGoods(mykey));
+		model.addAttribute("searchGoods", indexRepository.searchGoods(mykey));
 		return "user/searchResult";
-	}
-
-	@Override
-	public String searchGoodsType(Model model, String goodsTypeKey) {
-
-		return null;
 	}
 }

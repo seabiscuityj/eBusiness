@@ -23,8 +23,4 @@ public class IndexController {
 	public String searchGoods(Model model, String mykey) {
 		return indexService.searchGoods(model, mykey);
 	}
-	@RequestMapping("/searchGoodsType")
-	public String searchGoodsType(Model model, String goodsTypeKey) {
-		return indexService.searchGoodsType(model, goodsTypeKey);
-	}
 }

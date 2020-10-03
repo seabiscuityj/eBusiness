@@ -16,4 +16,5 @@ public interface TypeRepository {
 	int deleteType(int id);
 	List<Goods> selectGoods(int goodstype_id);
 	int addType(GoodsType goodsType);
+	List<GoodsType> searchGoodsType(String goodsTypeKey);
 }

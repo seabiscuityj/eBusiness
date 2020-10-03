@@ -25,4 +25,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="addType" parameterType="GoodsType">
 		insert into goodstype (id, typename) values(null, #{typename})
 	</insert>
+	<!-- 后台查询商品类别 -->
+	<select id="searchGoodsType" resultType="GoodsType" parameterType="String">
+		select * from GOODSTYPE gy where gy.typename like concat('%',#{goodsTypeKey},'%')
+	</select>
 </mapper>

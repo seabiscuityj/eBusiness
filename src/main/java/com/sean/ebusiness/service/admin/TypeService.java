@@ -11,4 +11,5 @@ public interface TypeService {
 	public int selectTypeByName(String goodsTypeName);
 	public String delete(int id);
 	public String addType(GoodsType goodsType, Model model);
+	public String searchGoodsType(Model model, String goodsTypeKey);
 }

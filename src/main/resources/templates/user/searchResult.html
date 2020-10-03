@@ -45,7 +45,7 @@
 			<h4>搜索结果</h4>
 		</div>
 		<div class="row">
-			<div class="col-xs-6 col-md-2" th:each="rGoods:${searchgoods}">
+			<div class="col-xs-6 col-md-2" th:each="rGoods:${searchGoods}">
 				<a th:href="'goodsDetail?id=' + ${rGoods.id}" class="thumbnail"> <img
 					alt="100%x180" th:src="'images/' + ${rGoods.gpicture}"
 					style="height: 180px; width: 100%; display: block;">

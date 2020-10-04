@@ -91,7 +91,9 @@ public class GoodsServiceImpl implements GoodsService{
 
 	@Override
 	public String delete(Integer id) {
-		if(goodsRepository.selectCartGoods(id).size() > 0 
+		// 如果编号id的商品目前在购物车中，或者有人收藏了，或者之前有人买过了，那么这个商品就不能删除
+		// ?但是感觉这个处理逻辑不合适
+		if(goodsRepository.selectCartGoods(id).size() > 0
 				|| goodsRepository.selectFocusGoods(id).size() > 0
 				|| goodsRepository.selectOrderGoods(id).size() > 0)
 			return "no";
@@ -102,8 +104,9 @@ public class GoodsServiceImpl implements GoodsService{
 	}
 
 	@Override
-	public String searchGoodsByAdmin(Model model, String goodsNameKey) {
+	public String searchGoodsByAdmin(Model model, String goodsNameKey, String act) {
 		model.addAttribute("searchGoodsByAdmin", goodsRepository.searchGoodsByAdmin(goodsNameKey));
+		model.addAttribute("act", act);
 		return "admin/searchGoodsResult";
 	}
 

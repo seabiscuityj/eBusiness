@@ -42,7 +42,8 @@ public class GoodsController extends AdminBaseController{
 		return goodsService.delete(id);
 	}
 	@RequestMapping("searchGoodsByAdmin")
-	public String searchGoodsByAdmin(Model model, String goodsNameKey) {
-		return goodsService.searchGoodsByAdmin(model, goodsNameKey);
+	public String searchGoodsByAdmin(Model model, String goodsNameKey, String act) {
+		// System.out.println(act); // 用来测试act参数是否传递成功
+		return goodsService.searchGoodsByAdmin(model, goodsNameKey, act);
 	}
 }

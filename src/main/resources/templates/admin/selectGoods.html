@@ -35,7 +35,7 @@
 		        error : function() {
 		            alert("处理异常！");
 		        }
-			}	
+			}
 		);
 	}
 	</script>
@@ -45,14 +45,34 @@
 	<div th:include="admin/header"></div>
 	<br><br><br>
 	<div class="container">
-		<!-- 新增的查询商品的搜索框 -->
-		<form action="goods/searchGoodsByAdmin" style="padding-right: 50px;">
+		<!-- 以下三个搜索框同时只能有一个出现 , 依据表单里的 th:if="${act} == 'xxx'" 来决定-->
+		<!-- 修改商品信息的搜索框 因为当前页面请求是updateSelect-->
+		<form th:if="${act} == 'updateSelect'" action="goods/searchGoodsByAdmin" style="padding-right: 50px;">
+			<div style="padding-bottom: 15px">
+				<input type="text" style= "width:400px;float:left" class="form-control" name="goodsNameKey" placeholder="请输入要修改的商品名称" />
+				<input type="hidden" name="act" value="updateSelect">
+				&nbsp;&nbsp;
+				<button type="submit" class="btn btn-default">搜索</button>
+			</div>
+		</form>
+		<!-- 删除商品的搜索框 当前页面请求是deleteSelect-->
+		<form th:if="${act} == 'deleteSelect'" action="goods/searchGoodsByAdmin" style="padding-right: 50px;">
+			<div style="padding-bottom: 15px">
+				<input type="text" style= "width:400px;float:left" class="form-control" name="goodsNameKey" placeholder="请输入要删除的商品名称" />
+				<input type="hidden" name="act" value="deleteSelect">
+				&nbsp;&nbsp;
+				<button type="submit" class="btn btn-default">搜索</button>
+			</div>
+		</form>
+		<!-- 查询商品的搜索框 当前页面请求是select-->
+		<form th:if="${act} == 'select'" action="goods/searchGoodsByAdmin" style="padding-right: 50px;">
 			<div style="padding-bottom: 15px">
 				<input type="text" style= "width:400px;float:left" class="form-control" name="goodsNameKey" placeholder="请输入要查询的商品名称" />
 				&nbsp;&nbsp;
 				<button type="submit" class="btn btn-default">搜索</button>
 			</div>
 		</form>
+
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h3 class="panel-title">商品列表</h3>

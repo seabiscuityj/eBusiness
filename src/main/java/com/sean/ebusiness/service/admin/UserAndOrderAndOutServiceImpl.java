@@ -53,4 +53,11 @@ public class UserAndOrderAndOutServiceImpl implements UserAndOrderAndOutService{
 		return "admin/allOrder";
 	}
 
+    @Override
+    public String searchOrderByAdmin(Model model, String customerEmail) {
+        List<Map<String, Object>> searchOrderByAdmin = userAndOrderAndOutRepository.searchOrderByAdmin(customerEmail);
+		model.addAttribute("searchOrderByAdmin", searchOrderByAdmin);
+		return "admin/searchOrderResult";
+    }
+
 }

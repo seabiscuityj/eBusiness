@@ -104,7 +104,7 @@ public class GoodsServiceImpl implements GoodsService{
 	@Override
 	public String searchGoodsByAdmin(Model model, String goodsNameKey) {
 		model.addAttribute("searchGoodsByAdmin", goodsRepository.searchGoodsByAdmin(goodsNameKey));
-		return "admin/searchGoodsByAdmin";
+		return "admin/searchGoodsResult";
 	}
 
 }

@@ -33,4 +33,8 @@ public class UserAndOrderAndOutController extends AdminBaseController{
 	public String selectOrder(Model model, int currentPage) {
 		return userAndOrderAndOutService.selectOrder(model, currentPage);
 	}
+	@RequestMapping("/searchOrderByAdmin")
+	public String searchOrderByAdmin(Model model, String customerEmail) {
+		return userAndOrderAndOutService.searchOrderByAdmin(model, customerEmail);
+	}
 }

@@ -30,4 +30,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectOrderByPage"  resultType="map">
 		select obt.*, ct.email from orderbasetable obt, customertable ct where obt.customer_id = ct.id limit #{startIndex}, #{perPageSize}
 	</select>
+	<!-- 后台根据用户email查询订单 -->
+	<select id="searchOrderByAdmin" resultType="map" parameterType="String">
+	select obt.*, ct.email from orderbasetable obt, customertable ct where ct.email = #{customerEmail}
+	</select>
 </mapper>

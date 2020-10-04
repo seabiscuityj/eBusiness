@@ -3,6 +3,7 @@ package com.sean.ebusiness.repository.admin;
 import java.util.List;
 import java.util.Map;
 
+import com.sean.ebusiness.entity.Order;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -17,4 +18,5 @@ public interface UserAndOrderAndOutRepository {
 	int deleteUser(int id);
 	int selectAllOrder();
 	List<Map<String, Object>> selectOrderByPage(@Param("startIndex") int startIndex, @Param("perPageSize") int perPageSize);
+	List<Map<String, Object>> searchOrderByAdmin(String customerEmail);
 }

@@ -10,11 +10,11 @@
 <script src="js/bootstrap.min.js"></script>
 <style type="text/css">
      .carousel{
-         height: 200px;
+         height: 400px; // 修改carousel滚动区域的高度
          background-color: #000;
       }
-      .carousel .item{
-         height: 200px;
+      .carousel .item{ // 修改carousel滚动商品的图片高度
+         height: 400px;
          background-color: #000;
       }
       .carousel img{
@@ -59,7 +59,7 @@
 		</div>
 		<!-- ************************************************** -->
 		<div id="carousel-example-generic" class="carousel slide"
-			data-ride="carousel" style="margin-top: 20px;">
+			data-ride="carousel" style="margin-top: 20px; " >
 			<!-- Indicators 小圆圈-->
 			<ol class="carousel-indicators">
 				<li data-target="#carousel-example-generic" 
@@ -71,7 +71,9 @@
 			<div class="carousel-inner" role="listbox">
 				<div th:each="advertise,adstat:${advertisementGoods}" th:class="(${adstat.index}==0)? 'item active' : 'item'">
 					<img th:src="'images/' + ${advertise.gpicture}" th:alt="${adstat.index + 1}">
-					<div class="carousel-caption"><span th:text="${advertise.gname}"></span></div>
+					<div class="carousel-caption">
+						<span th:text="${advertise.gname}"></span>
+					</div>
 				</div>
 			</div>
 			<!-- Controls -->

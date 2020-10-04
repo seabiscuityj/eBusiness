@@ -47,7 +47,7 @@
 		<div class="row">
 			<div class="col-xs-6 col-md-2" th:each="rGoods:${recommendGoods}">
 				<a th:href="'goodsDetail?id=' + ${rGoods.id}" class="thumbnail"> <img
-					alt="100%x180" th:src="'images/' + ${rGoods.gpicture}"
+					alt="商品图片" th:src="'images/' + ${rGoods.gpicture}"
 					style="height: 180px; width: 100%; display: block;">
 				</a>
 				<div class="caption" style="text-align: center;">

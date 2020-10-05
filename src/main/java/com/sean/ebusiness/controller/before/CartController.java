@@ -24,6 +24,8 @@ public class CartController extends BeforeBaseController{
 	}
 	@RequestMapping("/focus")
 	@ResponseBody
+	// @RequestBody 实现了将请求体中的数据绑定到形参goods，在这里请求体中的参数id绑定到Goods的参数id，也就是商品的编号
+	// @ResponseBody 作用在方法上，直接返回响应体对象
 	public String focus(@RequestBody Goods goods, Model model, HttpSession session) {
 		return cartService.focus(model, session, goods.getId());
 	}

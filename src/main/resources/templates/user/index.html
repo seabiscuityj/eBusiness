@@ -8,6 +8,7 @@
 <script src="js/jquery.min.js"></script>
 <script type="text/javascript" th:inline="javascript">
 	function focus(gid){
+		// ajax提交异步请求处理收藏请求
 		$.ajax(
 				{
 					//请求路径，要注意的是url和th:inline="javascript"
@@ -15,7 +16,7 @@
 					//请求类型
 					type : "post",
 					contentType : "application/json",
-					//data表示发送的数据
+					//data表示发送的数据，ResponseBody
 					data : JSON.stringify({
 						id : gid
 					}),
